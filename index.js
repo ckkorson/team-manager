@@ -121,7 +121,7 @@ const moreEmployees = () => {
                         </ul>
                     </div>
                 </div>`,
-            (err) => err ? console.log(err) : console.log('index.html created!'))
+            (err) => err ? console.log(err) : console.log('New employee added!'))
         if(data.addMore == 'Yes') {
             moreEmployees()
         } else {
@@ -129,10 +129,15 @@ const moreEmployees = () => {
             `\n</main>
             </body>
             </html>`,
-                (err) => err ? console.log(err) : console.log('index.html created!'))
+            (err) => err ? console.log(err) : console.log('index.html finished!'))
         }
     })
 // }
 }
 
-startBuilding()
+// startBuilding()
+const employee = new Employee()
+let email
+employee.getName(email).then((data) => {
+    console.log(data)
+})
