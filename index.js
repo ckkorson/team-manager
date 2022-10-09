@@ -44,20 +44,20 @@ const genericQuestions = () => {
 
 const addNewEmployee = (employee) => {
     fs.appendFile('./dist/index.html', 
-                `<div class="card">
-                    <div class="card-header">
-                        <h2>${employee.getName()}</h2>
-                        <h3>${employee.getRole()}</h3>
-                    </div>
-                    <div>
-                        <ul>
-                            <li>ID: ${employee.getId()}</li>
-                            <li>Email: ${employee.getEmail()}</li>
-                            <li>${pickSpecial(employee)}</li>
-                        </ul>
-                    </div>
-                </div>`,
-        (err) => err ? console.log(err) : console.log('Employee added!'))
+            `\n\t\t\t<div class="card">
+                <div class="card-header">
+                    <h2>${employee.getName()}</h2>
+                    <h3>${employee.getRole()}</h3>
+                </div>
+                <div>
+                    <ul>
+                        <li>ID: ${employee.getId()}</li>
+                        <li>Email: ${employee.getEmail()}</li>
+                        <li>${pickSpecial(employee)}</li>
+                    </ul>
+                </div>
+            </div>`,
+        (err) => err ? console.log(err) : console.log('Employee added!\n'))
 }
 
 const pickSpecial = (employee) => {
@@ -149,16 +149,21 @@ const addIntern = (intern) => {
 }
 
 const startBuilding = () => {
-    setUpIndex()
-    genericQuestions()
+    // const setUpPromise = new Promise((resolve, reject) => {
+        setUpIndex()
+    // })
+    // setUpIndex()
+    // setUpPromise.then(() => {
+        genericQuestions()
+    // })
 }
 
 const finishIndex = () => {
     fs.appendFile('./dist/index.html',
-                   `</main>
-                </body>
-                </html>`,
-                (err) => err ? console.log(err) : console.log('index.html finished!'))
+    `\n\t\t</main>
+    </body>
+    </html>`,
+    (err) => err ? console.log(err) : console.log('index.html finished!'))
 }
 
 const setUpIndex = () => {
@@ -177,7 +182,7 @@ const setUpIndex = () => {
         <header class="jumbotron">
             <h1>My Team</h1>
         </header>
-        <main>`, (err) => err ? console.log(err) : console.log('index.html created!'))
+        <main>`, (err) => err ? console.log(err) : console.log('index.html created!\n'))
 }
 
 startBuilding()
