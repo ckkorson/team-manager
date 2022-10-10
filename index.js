@@ -52,7 +52,7 @@ const addNewEmployee = (employee) => {
                 <div>
                     <ul>
                         <li>ID: ${employee.getId()}</li>
-                        <li>Email: ${employee.getEmail()}</li>
+                        <li>Email: <a href="mailto: ${employee.getEmail()}"> ${employee.getEmail()}</a></li>
                         <li>${pickSpecial(employee)}</li>
                     </ul>
                 </div>
@@ -149,13 +149,8 @@ const addIntern = (intern) => {
 }
 
 const startBuilding = () => {
-    // const setUpPromise = new Promise((resolve, reject) => {
         setUpIndex()
-    // })
-    // setUpIndex()
-    // setUpPromise.then(() => {
         genericQuestions()
-    // })
 }
 
 const finishIndex = () => {
